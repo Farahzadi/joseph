@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "My DevTools Extension",
+  "version": "1.0.0",
+  "description": "A simple Chrome DevTools panel",
+  "icons": {
+    "16": "16.png",
+    "64": "64.png",
+    "128": "128.png"
+  },
+  "devtools_page": "devtools.html"
+}
