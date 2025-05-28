@@ -1,9 +1,9 @@
 import { defineConfig } from "vite";
 import tailwindcss from "@tailwindcss/vite";
-import react from "@vitejs/plugin-react";
+import soldJsPlugin from "vite-plugin-solid";
 
 export default defineConfig({
-  plugins: [react(), tailwindcss()],
+  plugins: [soldJsPlugin(), tailwindcss()],
   root: "src",
   base: "./",
   build: {

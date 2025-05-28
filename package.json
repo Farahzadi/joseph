@@ -13,16 +13,13 @@
   "packageManager": "pnpm@10.11.0",
   "devDependencies": {
     "@tailwindcss/vite": "^4.1.7",
-    "@vitejs/plugin-react": "^4.5.0",
-    "@vitejs/plugin-vue": "^5.2.4",
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.3",
     "tailwindcss": "^4.1.7",
-    "vite": "^6.3.5"
+    "vite": "^6.3.5",
+    "vite-plugin-solid": "^2.11.6"
   },
   "dependencies": {
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "vue": "^3.5.15"
+    "solid-js": "^1.9.7"
   }
 }
