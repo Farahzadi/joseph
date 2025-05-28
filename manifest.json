@@ -4,9 +4,15 @@
   "version": "1.0.0",
   "description": "A simple Chrome DevTools panel",
   "icons": {
-    "16": "16.png",
-    "64": "64.png",
-    "128": "128.png"
+    "16": "icons/16.png",
+    "64": "icons/64.png",
+    "128": "icons/128.png"
   },
-  "devtools_page": "devtools.html"
+  "devtools_page": "devtools.html",
+  "web_accessible_resources": [
+    {
+      "resources": ["dist/panel.html", "dist/assets/*", "dist/webengage-min-v-6.0.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
 }
