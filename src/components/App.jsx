@@ -22,17 +22,30 @@ export default () => {
       </div>
       <For each={events()}>
         {(event, index) => {
-          const { event_name, event_data, system_data, ...rest } = event;
+          const { event_name, event_data, system_data, show, ...rest } = event;
           return (
             <table className="mb-8">
               <thead>
                 <tr>
                   <th>
-                    <button className="cursor-pointer">{event_name}</button>
+                    <button
+                      onClick={() => {
+                        setEvents((prev) =>
+                          prev.map((ev, i) =>
+                            i === index() ? { ...ev, show: !ev.show } : ev
+                          )
+                        );
+                      }}
+                      className="cursor-pointer"
+                    >
+                      {event_name}
+                    </button>
                   </th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody
+                style={{ display: event.show ? "table-row-group" : "none" }}
+              >
                 {_.map(rest, (value, key) => (
                   <tr>
                     <td className="p-1">{key}</td>

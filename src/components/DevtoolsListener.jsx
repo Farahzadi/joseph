@@ -16,7 +16,7 @@ export default function DevtoolsListener() {
     function handleRequest(req) {
       if (req.request.url === "https://c.webengage.com/l4.jpg") {
         const { data } = JSON.parse(req.request.postData.text);
-        const event = decode(data);
+        const event = decode(data).map((elem) => ({ ...elem, show: false }));
         setEvents((prev) => _.concat(prev, event));
       }
     }
