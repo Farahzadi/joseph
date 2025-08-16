@@ -57,12 +57,26 @@ export default () => {
                   <td className="p-1">
                     <table className="">
                       <tbody className="border-2">
-                        {_.map(event_data, (value, key) => (
-                          <tr>
-                            <td className="p-1">{key}</td>
-                            <td className="p-1">{value}</td>
-                          </tr>
-                        ))}
+                        {_.map(event_data, (value, key) => {
+                          let displayValue;
+
+                          if (typeof value === "boolean") {
+                            displayValue = value ? "true" : "false";
+                          } else if (value === null) {
+                            displayValue = "null";
+                          } else if (value === undefined) {
+                            displayValue = "undefined";
+                          } else {
+                            displayValue = value;
+                          }
+
+                          return (
+                            <tr key={key}>
+                              <td className="p-1">{key}</td>
+                              <td className="p-1">{displayValue}</td>
+                            </tr>
+                          );
+                        })}
                       </tbody>
                     </table>
                   </td>
